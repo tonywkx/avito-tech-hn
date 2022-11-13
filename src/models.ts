@@ -10,3 +10,14 @@ export interface IProduct {
     type: string
     url?: string
 }
+
+
+export interface IComment {
+    by : string
+    id : number
+    kids : Array<number>
+    parent : number
+    text : string
+    time : number
+    type : string
+}

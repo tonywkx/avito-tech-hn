@@ -15,7 +15,7 @@ export function usePoducts(){
       }
       const json = await response.json();
       const promises = json
-        .slice(0, 10)
+        .slice(0, 100)
         .map((id: any) =>
           fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`).then(
             response => response.json()
@@ -31,10 +31,10 @@ export function usePoducts(){
 
   useEffect(() => {
     getTopStories()
-    /* const interval = setInterval( () => {
+    const interval = setInterval( () => {
       getTopStories();
     }, 60000);
-    return () => clearInterval(interval); */
+    return () => clearInterval(interval);
   }, [])
 
   return {products, loading, getTopStories}
